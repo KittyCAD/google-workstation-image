@@ -12,12 +12,13 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    runs-on: "runs-on=${{ github.run_id }}/runner=8cpu-linux-x64/image=ubuntu24-full-x64"
     permissions:
       contents: read
       packages: write
 
     steps:
+      - uses: runs-on/action@v2
       - name: Checkout code
         uses: actions/checkout@v4
 
