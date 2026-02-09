@@ -3,7 +3,7 @@ umount /var/lib/nvidia || true
 
 
 curl -o /tmp/nvidia.sh https://us.download.nvidia.com/XFree86/Linux-x86_64/535.274.02/NVIDIA-Linux-x86_64-535.274.02.run
-bash /tmp/nvidia.sh --no-kernel-module --accept-license --no-systemd --no-check-for-alternate-installs --no-recursion
+bash /tmp/nvidia.sh --no-kernel-module --accept-license --no-systemd --no-check-for-alternate-installs --no-recursion --ui=none --no-questions
 
 
 ## GH
