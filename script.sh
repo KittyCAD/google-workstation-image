@@ -29,9 +29,9 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list | sudo tee /etc/apt/sources.list.d/tailscale.list
 
 ### Install
-apt update
+apt-get update
 
-apt install gh tailscale htop vim file git-lfs fdisk kmod pciutils gdb strace \
+apt-get install -y gh tailscale htop vim file git-lfs fdisk kmod pciutils gdb strace \
   vulkan-sdk \
   cuda-toolkit-12 \
   clang build-essential pkg-config libssl-dev cmake \
@@ -42,6 +42,8 @@ apt install gh tailscale htop vim file git-lfs fdisk kmod pciutils gdb strace \
   llvm
 
 
-nohup tailscaled
+#nohup tailscaled
 
 rm -rf /var/lib/apt/lists/*
+
+apt clean
