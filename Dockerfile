@@ -10,5 +10,7 @@ COPY --from=code-oss-image /etc/workstation-startup.d/110_start-code-oss.sh /etc
 COPY script.sh /tmp/script.sh
 RUN sudo bash /tmp/script.sh
 
+ENV EDITOR="vim"
+
 # Use the existing entrypoint script which will execute all scripts in /etc/workstation-startup.d/
 ENTRYPOINT ["/google/scripts/entrypoint.sh"]
