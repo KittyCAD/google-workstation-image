@@ -28,7 +28,7 @@ curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.tailscale-keyring.list
 ### Install
 apt-get update
 
-apt-get install -y gh tailscale htop vim file git-lfs fdisk kmod pciutils gdb strace \
+apt-get install -y gh netcat-traditional tailscale rsync htop vim file git-lfs fdisk kmod pciutils gdb strace \
   vulkan-sdk \
   cuda-toolkit-12 \
   clang build-essential pkg-config libssl-dev cmake \
@@ -36,8 +36,10 @@ apt-get install -y gh tailscale htop vim file git-lfs fdisk kmod pciutils gdb st
   libxmlsec1-dev uuid-dev libeigen3-dev libfreetype6-dev libgtk-4-dev \
   libavutil-dev libavformat-dev libswscale-dev  \
   ninja-build \
-  llvm
+  llvm \
+  clang-format-14
 
+sudo update-alternatives --install /usr/bin/clang-format clang-format /usr/bin/clang-format-14 14
 
 curl -o /tmp/nvidia.sh https://us.download.nvidia.com/XFree86/Linux-x86_64/535.274.02/NVIDIA-Linux-x86_64-535.274.02.run
 bash /tmp/nvidia.sh --no-kernel-module --accept-license --no-systemd --no-check-for-alternate-installs --no-recursion --ui=none --no-questions
